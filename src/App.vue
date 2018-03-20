@@ -2,7 +2,7 @@
   <div id="app">
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item navbar-item-text" href="http://www.x-squad.com/">
+        <a class="navbar-item navbar-item-text" href="http://www.x-squad.com/" target="_blank">
           X-Squad
         </a>
       </div>
@@ -15,9 +15,6 @@
         </div>
         <div class="navbar-item">
           <a @click="logout"> Log out </a>
-        </div>
-        <div class="navbar-burger">
-          <span>1</span>
         </div>
       </div>
     </nav>
