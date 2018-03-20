@@ -1,31 +1,63 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item navbar-item-text" href="http://www.x-squad.com/">
+          X-Squad
+        </a>
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+         <router-link to="/signup"> Sign up </router-link>
+        </div>
+        <div class="navbar-item">
+          Log in
+        </div>
+        <div class="navbar-item">
+          <a @click="logout"> Log out </a>
+        </div>
+        <div class="navbar-burger">
+          <span>1</span>
+        </div>
+      </div>
+    </nav>
     <router-view/>
   </div>
 </template>
 
+<script>
+export default {
+  methods: {
+    logout() {
+      window.localStorage.clear();
+      this.$router.push("/");
+    }
+  }
+};
+</script>
+
+
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }
-#nav {
-  padding: 30px;
+
+.navbar-item-text {
+  color: white;
+  font-size: 2rem;
+  text-decoration: none;
+  font-weight: 900;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.navbar-item {
+  color: white;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+.navbar {
+  background-color: black;
 }
 </style>
